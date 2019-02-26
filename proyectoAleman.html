@@ -11,22 +11,31 @@
     <link href="https://fonts.googleapis.com/css?family=Caveat|News+Cycle|Noto+Sans|Assistant|Source+Sans+Pro:200" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <style>
+
+
     body{
-        background-color: rgb(80, 168, 255);
+        background-color: rgba(153, 204, 255, 0.753);
         font-family: 'Source Sans Pro', sans-serif;
         font-weight: 500;
         color: black;
     }
 
 
+
+
+
     /* HEADER */
-    
+
     header h1{
         letter-spacing: 0.2em;
         text-align: center;
         padding: 10px;
         font-size: 1.7em;
+        color: rgba(197, 197, 197, 0.836);
+        transition: color 0.8s 0.8s;
     }
+
+
 
 
 
@@ -41,10 +50,13 @@
 
 
 
+
+
     header nav button{
         background: white;
-        width: 6%;
-        margin: 4px 0 4px 4px;
+        width: 30px;
+        margin: 10px 0 10px 10px;
+        transition: padding 0.3s;
     }
 
     header nav button div{
@@ -56,7 +68,14 @@
     header nav button div:nth-child(2){
         margin-top: 4px;
         margin-bottom: 4px;
+        transition: margin-top 0.3s, margin-bottom 0.3s, height 0.3s 0.1s;
     }
+
+    header nav button div:nth-child(3){
+        transition: height 0.3s 0.1s;
+    }
+
+
 
 
 
@@ -83,6 +102,9 @@
     }
 
 
+
+
+
     /* MAIN */
 
     div.container-fluid{
@@ -91,6 +113,9 @@
         margin-left: 0;
         margin-right: 0;
     }
+
+
+
 
 
     main{
@@ -114,6 +139,37 @@
         font-size: 0.8em;
         line-height: 1.7;
     }
+
+
+
+
+
+    /* ANIMATIONS */
+
+    body , header{
+        animation: change 3s;
+        animation-fill-mode: forwards;
+        animation-delay: 0.8s;
+    }
+
+
+
+
+
+    @keyframes change{
+        0%{
+            background-color: rgba(153, 204, 255, 0.753);
+        }
+
+        40%{
+            background-color: rgb(153, 204, 255);
+        }
+
+        100%{
+            background-color: rgb(153, 204, 255);
+        }
+    }
+
 
 
 
@@ -153,6 +209,8 @@
 
 
 
+
+
     main section h2::after{
         content: "";
         display: block;
@@ -160,6 +218,7 @@
         background-color: black;
         width: 35%;
     }
+
 
     </style>
 
@@ -235,6 +294,7 @@
     <script>
         var uList = document.querySelector("header nav ul");
         var navButton = document.querySelector("header nav button");
+        var numbr = 0;
 
         uList.style.width = document.body.offsetwidth;
 
@@ -243,8 +303,32 @@
         window.onload = function bigger(){
             document.querySelector('header nav').style.width = "100%";
             document.querySelector('header nav').style.transitionTimingFunction = "ease";
+            document.querySelector('header h1').style.color = "white";
         }
 
+        navButton.onclick = function compress(){
+            if(numbr == 0){
+
+                document.querySelector("header nav button div:nth-child(2)").style.margin = "0px";
+                document.querySelector("header nav button div:nth-child(2)").style.height = "0px";
+                document.querySelector("header nav button div:nth-child(3)").style.height = "0px";
+
+
+                numbr = 1;
+
+            }
+
+            else if(numbr == 1){
+
+                document.querySelector("header nav button div:nth-child(2)").style.marginTop = "4px";
+                document.querySelector("header nav button div:nth-child(2)").style.marginBottom = "4px";
+                document.querySelector("header nav button div:nth-child(2)").style.height = "2px";
+                document.querySelector("header nav button div:nth-child(3)").style.height = "2px";
+
+                numbr = 0;
+
+            }
+        }
     </script>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
