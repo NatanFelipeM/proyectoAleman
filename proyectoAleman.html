@@ -13,9 +13,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <style>
 
-
     body{
-        background-color: rgb(78, 150, 223);
+        background-color: rgb(255, 255, 255);
         font-family: 'Source Sans Pro', sans-serif;
         font-weight: 500;
         color: black;
@@ -24,82 +23,145 @@
 
 
 
+    /* HEADER----------------------------- */
 
-    /* HEADER */
+
+
+
+    header{
+        position: relative;
+    }
+    
+    #headerDiv{
+        display: flex;
+        flex-direction: column;
+    }
 
     header h1{
         letter-spacing: 0.2em;
-        text-align: center;
+        text-align: right;
         padding: 30px;
         font-size: 2.5em;
-        color: rgb(197, 197, 197);
-        transition: color 0.8s 0.8s;
+        color: rgb(255, 255, 255);
+        z-index: 1;
+        margin-top: 150px;
+        font-weight: 600;
     }
 
+    #headerDiv p{
+        letter-spacing: 0.1em;
+        text-align: right;
+        font-size: 1.6em;
+        color: rgb(255, 255, 255);
+        margin-top: 50px;
+        z-index: 1;
+        font-weight: 600;
+        margin-right: 20px;
+    }
+
+
+
+
+    #imgs{
+        position: absolute;
+        background-image: url('codes2.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: grid;
+        grid-template-columns: auto auto auto auto;
+        grid-template-rows: 72px auto auto auto auto auto;
+        background-attachment: fixed;
+    }
+
+    #imgs div:first-child{
+        background-image: url('headerBrand.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        grid-row: 2 / 7;
+        grid-column: 1 / 3;
+    }
+
+    #imgs div:nth-child(2){
+        grid-column: 1 / 3;
+        grid-row: 1 / 2;
+        background-color: #6db6ff;
+        margin-right: 33.5px;
+    }
+
+    #imgs div:nth-child(3){
+        grid-column: 3 / 5;
+        grid-row: 1 / 2;
+    }
 
 
 
 
     header nav{
-        padding: 5px 0px 5px 0px;
-        background-color: white;
-        overflow-x: hidden;
-        overflow-y: hidden; 
-        width: 0%;
-        transition: width 0.8s;
-    }
-
-
-
-
-
-    header nav button div:nth-child(2){
-        margin-top: 4px;
-        margin-bottom: 4px;
-        transition: margin-top 0.3s, margin-bottom 0.3s, height 0.3s 0.1s;
-    }
-
-    header nav button div:nth-child(3){
-        transition: height 0.3s 0.1s;
-    }
-
-
-
-
-
-    header ul{
         display: flex;
-        overflow-x: hidden;
+        padding: 5px 0px 5px 0px;
+        background-color: rgba(255, 255, 255, 0.856);
+        box-shadow: -2px 1px 2px rgba(0, 0, 0, 0.733);
+        background-image: linear-gradient(white, white);
+    }
+
+
+
+
+
+    header nav > ul{
         text-align: left;
         margin: 0px;
         padding: 0px;
         width: 100%;
     }
 
-    header ul li{
+    header nav > ul > li{
         display: inline-block;
-        overflow-x: hidden;
         list-style-type: none;
         padding: 0px;
         font-size: 1.4em;
         letter-spacing: 2px;
         margin-left: 25px;
         margin-right: 10px;
-        white-space: nowrap;
+        font-weight: bold;
     }
 
-    header ul li a{
-        overflow-x: hidden;
+    header nav > ul > li > a{
         display: block;
         transition: color 0.3s;
         padding: 10px 25px 10px 25px;
     }
 
+    .dropdown-menu{
+        border-radius: 0px;
+        background-color: rgba(255, 255, 255, 0.856);
+    }
+
+    .dropdown-item{
+        font-size: 1.2em;
+        font-weight: bold;
+        padding-top: 0;
+        padding-bottom: 0;
+    }
 
 
 
 
-    /* MAIN */
+    #brand{
+        background-image: url('logo.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        width: 10%;
+        height: 62px;
+    }
+
+
+
+
+
+    /* MAIN--------------------------------------- */
+
 
     div.container-fluid{
         background-color: white;
@@ -110,29 +172,150 @@
 
 
 
-
-
     main{
         padding: 10px;
         letter-spacing: 1px;
+        z-index: 1;
     }
 
+
+
     main section{
-        padding: 50px;
+        padding: 50px 100px;
+        font-weight: bold;
     }
 
     main article{
-        padding: 30px 5px 5px 40px;
+        padding: 30px 5px 5px 0;
+        font-weight: bold;
+        text-align: center;
+    }
+
+
+
+
+
+    main section:first-child{
+        display: grid;
+        grid-template-columns: auto auto auto 40%;
+        grid-template-rows: auto 300px auto;
+    }
+
+    main section:first-child h2{
+        margin-bottom: 40px;
+    }
+
+    main section:first-child article:nth-child(2){
+        grid-column: 1 / 3;
+        grid-row: 2 / 4;
+        padding-left: 40px;
+    }
+
+    main section:first-child article:nth-child(3){
+        grid-column: 3 / 5;
+        grid-row: 2 / 3;
+        padding-left: 40px;
+    }
+
+
+
+
+
+    main section:nth-child(2){
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    main section:nth-child(2) h2{
+        width: 100%;
+        margin-bottom: 80px;
+    }
+
+    main section:nth-child(2) article:nth-child(2){
+        flex: 1 0 60%;
+        background-color: rgb(169, 189, 238);
+        color: white;
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+    }
+
+    main section:nth-child(2) article:nth-child(4){
+        background-image: url('3.jpg');
+        width: 100%;
+        margin-top: 80px;
+        padding-top: 20px;
+        padding-right: 0;
+        border: 1px solid rgb(255, 166, 0);
+    }
+
+    main section:nth-child(2) article:nth-child(4) h3{
+        background-color: rgba(255, 216, 144, 0.74);
+        border-top: 1px solid rgb(255, 166, 0);
+        border-bottom: 2px solid rgb(255, 166, 0);
+    }
+
+    main section:nth-child(2) article:nth-child(4) div{
+        background-color: rgba(255, 244, 223, 0.795);
+        border: 1px solid rgb(255, 166, 0);
+        border-bottom: 2px solid rgb(255, 166, 0);
+        margin-left: 70px;
+        margin-right: 70px;
+    }
+
+    main section:nth-child(2) article p{
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+
+
+
+
+
+    #htmlImg{
+        width: 240px;
+        height: 240px;
+        margin: 0 auto;
+        grid-row: 3 / 4;
+        grid-column: 3 / 5;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        padding-left: 40px;
+    }
+
+    #cssImg{
+        flex: 2 0 40%;
+        display: flex;
+        justify-content: center;
+        padding-top: 30px;
+        border: 1px solid #2A65F1;
+        border-left: 2px solid #2A65F1;
+        border-bottom: 3px solid #2A65F1;
+        padding-bottom: 10px;
 
     }
+
+
+
+
     main section h2{
         font-size: 1.7em;
         padding-top: 20px;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    main section:first-child h2{
+        grid-column: 1 / 5;
+        grid-row: 1 / 2;
+        text-align: center;
     }
 
     main article h3{
         font-size: 1.5em;
         margin-top: 10px;
+        font-weight: bold;
     }
 
     main article p{
@@ -140,45 +323,58 @@
         line-height: 1.7;
         margin-top: 20px;
     }
+
+
+
+
+
+
+    /* ASIDE------------------------------------------ */
+
+
+    aside{
+        margin-top: 50px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    aside h2{
+        margin-bottom: 30px;
+        font-weight: bold;
+    }
+
+    aside h3{
+        font-weight: bold;
+    }
     
-    main article p a.hoverLinks{
-        background-image: linear-gradient(140deg, rgba(30, 143, 255, 0.322), rgba(77, 166, 255, 0.247), rgba(96, 157, 219, 0.185), rgba(147, 201, 255, 0.26));
+    aside div > div{
+        margin-top: 40px;
+        text-align: center;
+        font-weight: bold;
     }
 
-
-
-
-    /* ANIMATIONS */
-
-    body , header{
-        animation: change 3s;
-        animation-fill-mode: forwards;
-        animation-delay: 0.8s;
-    }
-
-
-
-
-
-    @keyframes change{
-        0%{
-            background-color: rgb(78, 150, 223);
-        }
-
-        40%{
-            background-color: rgb(109, 182, 255);
-        }
-
-        100%{
-            background-color: rgb(109, 182, 255);
-        }
+    aside div > div:last-child{
+        margin-bottom: 70px;
     }
 
 
 
 
 
-    /* PSEUDO-THINGS */
+
+    /* FOOTER----------------------------------------- */
+
+    footer{
+        padding: 50px;
+    }
+
+
+
+
+
+    /* PSEUDO-THINGS---------------------------------- */
+
 
     header ul li a:link{
         text-decoration: none;
@@ -193,11 +389,15 @@
         color: black;
     }
 
-    header ul li a:hover{
+    header nav > ul > li > a:hover{
         color: rgb(103, 179, 255);
     }
 
-    header ul li a::after{
+
+
+
+
+    header ul li > a.op::after{
         content: "";
         display: block;
         height: 1px;
@@ -206,9 +406,20 @@
         transition: width 0.3s, background-color 0.3s;
     }
 
-    header ul li a:hover::after{
+
+
+    main::after{
+        content: "";
+        display: block;
+        height: 1px;
+        width: 80%;
+        margin: 80px auto;
+        background-color: black;
+    }
+    
+    header ul li > a.op:hover::after{
         width: 100%;
-        background-color: rgb(80, 168, 255);
+        background-color: rgb(103, 179, 255);
     }
 
 
@@ -222,28 +433,22 @@
         background-color: black;
         width: 12%;
         margin-top: 5px;
+        margin: auto;
     }
 
+    aside h2::after{
+        content: "";
+        display: block;
+        height: 1px;
+        background-color: black;
+        width: 100%;
+        margin-top: 5px;
+        margin: auto;
+    }
 
     </style>
 
 
-    <!-- JQUERY -->
-    
-    <script>
-
-        $(document).ready(function(){
-
-
-            $(linkHoverer).hover(function(){
-            
-                $(navLinks).triggerHandler("hover");
-            
-            });
-
-        });
-
-    </script>
 
 
 
@@ -253,86 +458,405 @@
     
     
     <header>
-        
-        <h1>My web design knowlegde</h1>
-        
+
+            <div id="imgs" class="fixed">
+
+                <div></div>
+                <div></div>
+                <div></div>
+
+
+            </div>
+
+            <div id="headerDiv">
+    
+                <h1>My web design knowlegde</h1>
+    
+                <p>Here i'll be showing things that I'm capable to do.</p>
+    
+            </div>
+
+
         <nav>
             
-            <ul>
-                
-                <li><a href="#">Home</a></li>
-                <li><a href="#">option 1</a></li>
-                <li><a href="#">option 2</a></li>
-                <li><a href="#">option 3</a></li>
-                
-                </ul>
-                
-            </nav>
-            
-        </header>
-        
-        
-        
-        
-        
-        <div class="container-fluid">
+            <div id="brand"></div>
 
-            <main>
+            <ul>
+                <li><a href="#" class="op">Home</a></li>
+                <li><a href="#" class="op">option 1</a></li>
+
+                <li class="dropdown">
+
+                    <a href="#" id="op2" class="dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">option 2</a>
+
+                    <div class="dropdown-menu" aria-labelledby="op2">
+
+                        <a href="#" class="dropdown-item">Action 1</a>
+                        <a href="#" class="dropdown-item">Action 2</a>
+                        <a href="#" class="dropdown-item">Action 3</a>
+
+                    </div>
+
+                </li>
+
+
+                <li class="dropdown">
+
+                    <a href="#" id="op3" class="dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">option 3</a>
+
+                    <ul class="dropdown-menu" aria-labelledby="op3">
+
+                        <li class="dropdown-item"><a href="#">Action 1</a></li>
+
+                        <li class="dropdown-item dropright">
+                            
+                            <a href="#" id="ac2" class="dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Action 2</a>
+                        
+                                <ul class="dropdown-menu" aria-labelledby="ac2">
+
+                                    <li class="dropdown-item"><a href="#">Action 1 of the action 2</a></li>
+
+                                    <li class="dropdown-item"><a href="#">Action 2 of the action 2</a></li>
+
+                                    <li class="dropdown-item"><a href="#">Action 3 of the action 2</a></li>
+
+                                </ul>
+
+                        </li>
+                        
+                    </ul>
+
+                </li>
+
+            </ul>
                 
+
+        </nav>
+            
+    </header>
+        
+        
+        
+        
+        
+    <div class="container-fluid">
+
+
+        <main>
+           
+            
+
+
+
             <section>
 
+
                 <h2>Header</h2>
+                
+
+
+                <article>
+                
+                    <h3>CSS</h3>
+                    
+                    <p>
+
+                        Beyond the styles, I used CSS to create the transitions of the links. I have used it to modify the links 
+                        on the dropdowns too. The header is positionated as relative and the box that works as the background of
+                        the title is absolute positioned. Using the z-index property of the text boxes I made them visible.
+                    </p>   
+
+
+                    <p>
+
+                        In the part of the header under the nav, I have displayed a container as grid in combination with a div 
+                        to create the image in the background of the title.
+
+                    </p>
+
+
+                    
+                </article>
+                
+                
+
+                <article>
+                    
+                    <h3>Other resources</h3>
+                    
+                    <p>
+                        
+                        I created the dropdowns of the nav using bootstrap and some extra jQuery code i took from a snippet to make the
+                        secondary dropdowns work. The height property of the header boxes that contain the elements for the title and the
+                        one that contains the background, is set with jQuery.
+                        
+                    </p>
+                                
+                    <div id="htmlImg"><img src="1.jpg" alt="html5Symbol"></div>
+                    
+                </article>
+                
+                
+            </section>
+
+            
+            
+            
+            
+            
+
+            <section>
+                
+
+                <h2>Main</h2>
+                            
+
+                
                 
                 <article>
                     
                     <h3>CSS</h3>
                     
-                    <p>Beyond the styles, I used CSS to make the transitions of the <a class="hoverLinks" href="#">links<a> and the nav.</p>
+                    <p>
                         
-                        <p>I have set the display of the unordered list in the nav to flex, because the list items were being wrapped when
-                            the nav had not the needed width to fit all the list items.</p>
-                            
-                        </article>
+                        To display the first section on the main I'm using diplay grid. For this second section
+                        I'm using a flex display.
                         
-                        <article>
-
-                            <h3>JS</h3>
-                            
-                            <p>I used a script just to create a function that is triggered when the onload event of the window is fired, making the nav styles to be
-                                modified at that moment with a transition.</p>
-                                
-                            </article>
-                            
-                        </section>
-
-                        <section>
-                            
-                            
-                            
-                        </section>
-                        
-                    </main>
+                    </p>
                     
-                </div>
-                
-                
-    <script>
+
+                    <p>
         
-        var linkHoverer = document.querySelector("main a.hoverLinks");
-        var navLinks = document.querySelectorAll("header nav li a");
-        var uList = document.querySelector("header nav ul");
+                        To set the styles of the articles I've just been playing with the borders and the backgrounds.
+        
+                    </p>
 
-        uList.style.width = document.body.offsetwidth;
+                </article>
 
-        window.onload = function bigger(){
-
-            document.querySelector('header nav').style.width = "100%";
-            document.querySelector('header nav').style.transitionTimingFunction = "ease";
-            document.querySelector('header h1').style.color = "white";
-
-        }
+                
+                <div id="cssImg"><img src="2.jpg " alt="css3Symbol"></div>
+                
+                
 
 
+                <article>
+                    
+                    <h3>Images</h3>
+
+
+                    <div>
+
+                        <p>
+
+                            I'm setting the flex property of the items to position them together in the same line.
+
+                        </p>
+                        
+                        <p>
+
+                            In the case of this article I have set the background image as a tiny image that I modified.
+
+                        </p>
+
+                    </div>
+                    
+
+
+                </article>
+
+                
+            </section>
+               
+           
+            
+
+
+        </main>
+        
+
+
+
+
+        <aside>
+
+
+
+            <h2>Sources</h2>
+
+
+            <div>
+
+                <div>
+
+                    <h3><a href="https://commons.wikimedia.org/wiki/File:HTML5_logo_and_wordmark.svg" target="_blank">html</a>, <a href="https://commons.wikimedia.org/wiki/File:CSS3_logo_and_wordmark.svg" target="_blank">css</a> and <a href="https://commons.wikimedia.org/wiki/File:Javascript-shield.svg" target="_blank">JS</a> photos</h3>
+
+                    <p>I found the photos filtering in the images of google the ones that had a license that let me use 
+                    and modify them.</p>
+
+                </div>
+
+                
+                <div>
+
+                    <h3>jQuery code</h3>
+    
+                    <p>Found it on stack overflow searching for something to make the nested dropdown work.</p>
+
+                </div>
+
+
+                <div>
+
+                    <h3>Header background image and brand</h3>
+    
+                    <p>These two where made by me.</p>
+
+                </div>
+
+            </div>
+            
+
+
+        </aside>
+        
+
+
+    </div>
+
+
+
+
+    <footer>
+
+        <div>
+
+            <form action="mailto:natanfelipe_m.oscar@hotmail.com" enctype="text/plain">
+
+
+                <fieldset>
+                
+                    <legend>Mail me</legend>
+
+                    <table>
+
+                        <tbody>
+
+                            <tr>
+
+                                <td><label for="Name">Your name:</label></td>
+                                <td><input type="text" name="name" id="Name"></td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td><label for="mail">Your email:</label></td>
+                                <td><input type="email" name="_replyto" id="mail"></td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td colspan="2">
+
+                                    <textarea>
+
+                                    </textarea>
+
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td></td>
+                                <td><input type="submit" value="Send"></td>
+
+                            </tr>
+
+
+                        </tbody>
+
+                    </table>
+
+                </fieldset>
+
+
+            </form>
+
+        </div>
+
+
+        <div></div>
+
+    </footer>
+                
+                
+
+
+
+
+
+    <script>
+    
+        $(window).on("scroll", function(){
+
+            
+            var windowScrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+
+            if(windowScrollHeight == document.querySelector("#headerDiv").offsetHeight){
+
+                
+
+            };
+
+        });
+
+    </script>
+
+
+
+
+        <!-- JQUERY -->
+        
+    <script>
+    
+        $(document).ready(function(){
+
+
+            $("#headerDiv").css("height", (this.offsetHeight + 150));
+            $("#imgs").css({"width": document.querySelector("#headerDiv").offsetWidth, "height": (document.querySelector("#headerDiv").offsetHeight + 72)});
+            
+
+
+            // CODE THAT I TOOK FROM A BLOG--------------------------------------------------
+            $('.dropdown-menu a.dropdown-toggle').on('click', function(e) {
+
+                if (!$(this).next().hasClass('show')) {
+                    $(this).parents('.dropdown-menu').first().find('.show').removeClass("show");
+                };
+
+                var $subMenu = $(this).next(".dropdown-menu");
+                $subMenu.toggleClass('show');
+
+
+                $(this).parents('li.nav-item.dropdown.show').on('hidden.bs.dropdown', function(e) {
+                    $('.dropdown-submenu .show').removeClass("show");
+                });
+
+
+                return false;
+            });
+            // END------------------------------------------------------------------------------
+
+
+
+            
+        });
+    
     </script>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
