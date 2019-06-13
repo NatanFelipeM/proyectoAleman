@@ -101,7 +101,6 @@
         padding: 5px 0px 5px 0px;
         background-color: rgba(255, 255, 255, 0.856);
         box-shadow: -2px 1px 2px rgba(0, 0, 0, 0.733);
-        background-image: linear-gradient(white, white);
     }
 
 
@@ -246,6 +245,11 @@
         padding-top: 20px;
         padding-right: 0;
         border: 1px solid rgb(255, 166, 0);
+        background-attachment: fixed;
+    }
+
+    main section:nth-child(2) article:last-child div{
+        margin: 40px 0;
     }
 
     main section:nth-child(2) article:nth-child(4) h3{
@@ -366,7 +370,21 @@
     /* FOOTER----------------------------------------- */
 
     footer{
-        padding: 50px;
+        background-color: #6DB6FF;
+        color: white;
+        font-weight: bold;
+        display: flex;
+        padding: 5px;
+    }
+
+    footer address{
+        margin-left: 20px;
+        margin-bottom: 0;
+    }
+
+    footer a{
+        margin-left: 10px;
+        font-size: 2em;
     }
 
 
@@ -446,6 +464,26 @@
         margin: auto;
     }
 
+
+
+
+    footer a:link{
+        color: rgb(0, 140, 255);
+    }
+
+    footer a:active{
+        color: rgb(0, 140, 255);
+    }
+
+    footer a:hover{
+        color: rgb(0, 140, 255);
+        text-decoration: none;
+    }
+
+    footer a:visited{
+        color: rgb(0, 140, 255);
+    }
+
     </style>
 
 
@@ -453,6 +491,10 @@
 
 
 </head>
+
+
+
+
 <body>
     
     
@@ -477,7 +519,7 @@
             </div>
 
 
-        <nav>
+        <nav class="fixed-top">
             
             <div id="brand"></div>
 
@@ -728,70 +770,13 @@
 
     <footer>
 
-        <div>
+        <address>
 
-            <form action="mailto:natanfelipe_m.oscar@hotmail.com" enctype="text/plain">
+            By: Natan &nbsp; | &nbsp; Contact: natanfelipe_m.oscar@hotmail.com
 
+        </address>
 
-                <fieldset>
-                
-                    <legend>Mail me</legend>
-
-                    <table>
-
-                        <tbody>
-
-                            <tr>
-
-                                <td><label for="Name">Your name:</label></td>
-                                <td><input type="text" name="name" id="Name"></td>
-
-                            </tr>
-
-
-                            <tr>
-
-                                <td><label for="mail">Your email:</label></td>
-                                <td><input type="email" name="_replyto" id="mail"></td>
-
-                            </tr>
-
-
-                            <tr>
-
-                                <td colspan="2">
-
-                                    <textarea>
-
-                                    </textarea>
-
-                                </td>
-
-                            </tr>
-
-
-                            <tr>
-
-                                <td></td>
-                                <td><input type="submit" value="Send"></td>
-
-                            </tr>
-
-
-                        </tbody>
-
-                    </table>
-
-                </fieldset>
-
-
-            </form>
-
-        </div>
-
-
-        <div></div>
-
+        <a class="fab fa-github" href="https://github.com/NatanFelipeM"></a>
     </footer>
                 
                 
@@ -804,7 +789,7 @@
     
         $(window).on("scroll", function(){
 
-            
+
             var windowScrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
 
             if(windowScrollHeight == document.querySelector("#headerDiv").offsetHeight){
